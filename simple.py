@@ -9,7 +9,7 @@ env.trim_blocks = True
 env.lstrip_blocks = True
 env.rstrip_blocks = True
 
-template = env.get_template('terraform.tfvars')
+template = env.get_template('terraform.tfvars.tml')
 
 bucket_count = 3
 instance_count = 2
@@ -21,4 +21,8 @@ output = template.render(
     environment=environment,
     db_type=db_type
     )
-print(output)
+# print(output)
+
+# to save the results
+with open("terraform.tfvars", "w") as fh:
+    fh.write(output)

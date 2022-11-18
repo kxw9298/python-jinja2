@@ -1,5 +1,4 @@
 resources = {
-
     buckets = [
     {% for index in range(bucket_count) %}
         {% if loop.last %}
